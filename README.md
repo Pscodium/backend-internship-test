@@ -27,21 +27,37 @@ Se trata de um CRUD de restaurantes e pratos. Algumas funcionalidades ainda não
 Este repositório foi organizado da seguinte forma, utilizando alguns conceitos de clean architecture e SOLID patterns:
 
 📁 src - 
+
 |_ app.ts - inicialização do express
+
 |_ index.ts - ponto de entrada do projeto
+
 |_ 📁 dtos - interfaces de definição de objetos de requisições
+
 |_ 📁 entities - interfaces de definição das entidades do projeto (restaurantes e pratos, neste caso)
+
 |_ 📁 repositories - interfaces de definição dos repositórios das entidades (classes responsáveis por controlar todas as atividades 		   de determinada entidade no banco de dados)
+
 |_ 📁 routes - definição das rotas do projeto
+
 |_ 📁 useCases - definição e execução dos casos de uso do projeto
+
 |_ |_ **Controller.ts - controller de uma determinada rota
+
 |_ |_ **UseCase.ts - execução de determinado caso de uso
+
 |_ 📁 infra - relacionada a bibliotecas externas
+
 |_ |_ 📁 typeorm - todas as implementações do ORM no projeto
+
 |_ |_ |_ 📁 entities - implementações das entidades dentro do ORM
+
 |_ |_ |_ 📁 migrations
+
 |_ |_ |_ 📁 repositories - implementações dos repositórios do ORM
+
 |_ |_ |_ index.ts - arquivo de conexão do ORM
+
 
 #### Fluxo de uma rota
 route -> controller -> useCase -> repository -> useCase -> controller
@@ -70,4 +86,3 @@ https://www.getpostman.com/collections/b2bb0e2ca445b9cdcbdb
 
 ## Execução e Avaliação
 Ao terminar o desafio, enviar link do repositório contendo as alterações. Sinta-se livre para pesquisar nas documentações do TypeORM para executar as atividades. Assim como o desafio completo corretamente, o esforço também será avaliado. Boa sorte!
-	
