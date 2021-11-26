@@ -13,9 +13,8 @@ class RestaurantsRepository implements IRestaurantRepository {
   }
 
   async list(): Promise<Restaurant[]> {
-    /*
-      @TODO - implementar a listagem pelo ORM
-    */
+    const restaurants = this.repository.find({relations: ['dishes']})
+    return restaurants
   }
 
   async create({ name, phone, dishes }: ICreateRestaurantDTO): Promise<Restaurant> {
