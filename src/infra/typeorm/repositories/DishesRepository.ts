@@ -12,13 +12,12 @@ class DishesRepository implements IDishesRepository {
   }
 
   async create({ name, price, restaurantId }: ICreateDishDTO): Promise<Dish> {
+    const dish = this.repository.create();
 
-    /* 
-      @TODO - implementar a criação de um prato
-    */
-
-    // const dish = 
-    // return dish;
+    Object.assign(dish, { name, price, restaurantId });
+    
+    await this.repository.save(dish);
+    return dish;
   }
 
   async list(restaurantId: string): Promise<IDish[]> {
