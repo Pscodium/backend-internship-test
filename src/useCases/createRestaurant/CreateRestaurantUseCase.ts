@@ -13,6 +13,10 @@ class CreateRestaurantUseCase {
   async execute({ name, phone, dishes }: IRequest): Promise<IRestaurant> {
     const restaurantsRepository = new RestaurantsRepository();
     const dishInstances = dishes.map(({ name, price }) => {
+      if(!name || !price) {
+        throw new Error('dishe values are not defined')
+      }
+      
       const dish = new Dish();
       Object.assign(dish, { name, price });
       return dish;

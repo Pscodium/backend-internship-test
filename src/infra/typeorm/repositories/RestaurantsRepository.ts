@@ -25,10 +25,7 @@ class RestaurantsRepository implements IRestaurantRepository {
   }
 
   async delete(restaurantId: string): Promise<void> {
-    /*
-      @TODO - implementar a deleção do restaurante no ORM com o id informado
-    */
-    throw new Error('Method not implemented.');
+    await this.repository.delete(restaurantId)
   }
 }
 

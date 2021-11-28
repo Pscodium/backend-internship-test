@@ -1,4 +1,4 @@
-import { RestaurantsRepository } from "infra/typeorm/repositories/RestaurantsRepository";
+import { RestaurantsRepository } from "../../infra/typeorm/repositories/RestaurantsRepository";
 
 class DeleteRestaurantUseCase {
   async execute(restaurantId: string): Promise<void> {
